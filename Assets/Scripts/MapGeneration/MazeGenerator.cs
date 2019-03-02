@@ -13,7 +13,7 @@ public class MazeGenerator : MonoBehaviour
         public bool right;
         public bool up;
         public bool bottom;
-    }
+    };
 
     public GameObject roomPrefab;
 
