@@ -20,6 +20,7 @@ namespace Controller
         private void Update()
         {
             _camera.rotation = Quaternion.Lerp(_camera.rotation, body.transform.rotation, Time.deltaTime * 20f); //Lerp so that the jerkiness of 30 updates per second doesn't make the game feel like 30FPS on a 60+hz monitor
+            _camera.position = Vector3.Lerp(_camera.position, body.transform.position, Time.deltaTime * 20f); //Same here
         }
 
         private void FixedUpdate()
