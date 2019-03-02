@@ -25,7 +25,7 @@ namespace Controller
 
         private void FixedUpdate()
         {
-            _controller.Move(transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.fixedDeltaTime);
+            _controller.Move(body.transform.forward * Input.GetAxis("Vertical") * moveSpeed * Time.fixedDeltaTime);
             var yRot = body.transform.rotation.eulerAngles.y;
             yRot += Input.GetAxis("Horizontal") * lookSpeed * Time.fixedDeltaTime;
             body.transform.rotation = Quaternion.Euler(0f, yRot, 0f);
