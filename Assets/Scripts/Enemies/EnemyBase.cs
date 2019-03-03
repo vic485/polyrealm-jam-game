@@ -33,6 +33,7 @@ namespace Enemies
             if (other.gameObject.CompareTag("Player"))
             {
                 // TODO: Deal handToHandDmg
+                // TODO: Add a cooldown to the above function, so the player doesn't die almost instantly lol
             }
         }
     }
