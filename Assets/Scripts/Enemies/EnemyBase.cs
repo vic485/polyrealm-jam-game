@@ -21,7 +21,9 @@ namespace Enemies
         private void Update()
         {
             // Act as a billboard
-            transform.rotation = Quaternion.Euler(0f, _playerTransform.rotation.eulerAngles.y, 0f);
+            //transform.rotation = Quaternion.Euler(0f, _playerTransform.rotation.eulerAngles.y, 0f);
+            transform.forward = _playerTransform.forward; //This is faster than the above method, and will result in the same effect, because our player doesn't rotate around any other axis than Y
+            //transform.LookAt(_playerTransform); //But this is hopefully better, because otherwise if you turn the camera the enemy's shadow will change and it looks really weird. EDIT: not better lol
             
             // TODO: Move towards player
         }
