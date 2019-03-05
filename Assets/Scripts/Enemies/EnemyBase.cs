@@ -1,4 +1,5 @@
-﻿using UnityEngine;
+﻿using Controller;
+using UnityEngine;
 
 namespace Enemies
 {
@@ -12,6 +13,7 @@ namespace Enemies
         public float rangedDmg;
 
         private Transform _playerTransform;
+        private float _delta;
 
         private void Start()
         {
@@ -28,12 +30,18 @@ namespace Enemies
             // TODO: Move towards player
         }
 
-        private void OnCollisionStay(Collision other)
+        private void OnTriggerStay(Collider other)
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                // TODO: Deal handToHandDmg
-                // TODO: Add a cooldown to the above function, so the player doesn't die almost instantly lol
+                print(_delta);
+                _delta += Time.fixedDeltaTime;
+
+                if (_delta >= 0.5f)
+                {
+                    other.gameObject.GetComponent<PlayerBase>().Attack(handToHandDmg);
+                    _delta = 0f;
+                }
             }
         }
     }

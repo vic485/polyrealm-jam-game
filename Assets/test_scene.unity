@@ -113,6 +113,25 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &126875939 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7491580477378360144, guid: 0ed2e742d0efc3c4a8c4934ec85946da,
+    type: 3}
+  m_PrefabInstance: {fileID: 7491580478744414365}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &126875940
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 126875939}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6df31bebbb6a43d29c4cd632e4a1536d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Health: 500
 --- !u!1 &270261587
 GameObject:
   m_ObjectHideFlags: 0
@@ -718,6 +737,7 @@ GameObject:
   - component: {fileID: 1470422245}
   - component: {fileID: 1470422246}
   - component: {fileID: 1470422247}
+  - component: {fileID: 1470422248}
   m_Layer: 0
   m_Name: Spooky boi
   m_TagString: Untagged
@@ -752,7 +772,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07c8d7b644363e0488a0ab6393ad4d75, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  handToHandDmg: 0
+  handToHandDmg: 15
   rangedDmg: 0
 --- !u!143 &1470422247
 CharacterController:
@@ -763,7 +783,7 @@ CharacterController:
   m_GameObject: {fileID: 1470422244}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 2
   m_Height: 2
   m_Radius: 0.4
@@ -771,6 +791,20 @@ CharacterController:
   m_StepOffset: 0.3
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!136 &1470422248
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1470422244}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 2
+  m_Direction: 1
   m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &1715659086
 GameObject:
@@ -1103,6 +1137,16 @@ PrefabInstance:
     - target: {fileID: 7491580477492780602, guid: 0ed2e742d0efc3c4a8c4934ec85946da,
         type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491580477492780602, guid: 0ed2e742d0efc3c4a8c4934ec85946da,
+        type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7491580477378360144, guid: 0ed2e742d0efc3c4a8c4934ec85946da,
+        type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 7491580477492780597, guid: 0ed2e742d0efc3c4a8c4934ec85946da,

@@ -4,7 +4,8 @@ namespace Controller
 {
     public class PlayerBase : MonoBehaviour
     {
-        public float Health { get; protected set; } = 100f;
+        //public float Health { get; protected set; } = 500f;
+        public float Health = 500f;
         public float CloseAttack { get; protected set; } = 10f;
         public float RangeAttack { get; protected set; } = 50f;
         public float MagicAttack { get; protected set; } = 25f;
@@ -12,7 +13,7 @@ namespace Controller
 
         public void Attack(float damage)
         {
-            Health -= Mathf.Min(damage - Armor, 0f);
+            Health -= Mathf.Max(damage - Armor, 0f);
             
             // TODO: Die when health falls below 0
         }
