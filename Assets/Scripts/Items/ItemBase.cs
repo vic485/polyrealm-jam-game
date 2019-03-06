@@ -22,7 +22,7 @@ namespace Items
             }
         }
 
-        protected void OnPickup()
+        protected virtual void OnPickup()
         {
             Destroy(gameObject);
         }

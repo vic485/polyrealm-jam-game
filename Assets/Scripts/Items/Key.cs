@@ -2,7 +2,7 @@
 {
     public class Key : ItemBase
     {
-        override void OnPickup()
+        protected override void OnPickup()
         {
             
         }
