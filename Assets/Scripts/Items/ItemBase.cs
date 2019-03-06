@@ -1,19 +1,24 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Controller;
 
 namespace Items
 {
     public class ItemBase : MonoBehaviour
     {
-        private Transform _playerTransform;
+        protected Transform _playerTransform;
+        protected GameObject _playerObject;
+        protected PlayerBase _playerBase;
 
-        private void Start()
+        protected void Start()
         {
-            _playerTransform = GameObject.FindWithTag("Player").transform;
+            _playerObject = GameObject.FindWithTag("Player");
+            _playerTransform = _playerObject.transform;
+            _playerBase = _playerObject.GetComponent<PlayerBase>();
         }
 
-        private void OnTriggerEnter(Collider other)
+        protected void OnTriggerEnter(Collider other)
         {
             if (other.gameObject.tag == "Player")
             {

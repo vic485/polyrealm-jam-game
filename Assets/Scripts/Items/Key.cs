@@ -4,7 +4,8 @@
     {
         protected override void OnPickup()
         {
-            
+            _playerBase.PickUpKey();
+            Destroy(gameObject);
         }
     }
 }
