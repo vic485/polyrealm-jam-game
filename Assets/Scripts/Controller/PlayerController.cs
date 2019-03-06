@@ -15,8 +15,6 @@ namespace Controller
         public GameObject eye;
         public float lookSpeed = 5f;
         public float moveSpeed = 1f;
-
-        private float health;
         
 
         private void Start()
