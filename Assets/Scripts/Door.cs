@@ -6,6 +6,7 @@ public class Door : MonoBehaviour
 {
     private bool isOpen;
     private bool isMoving;
+    public bool needsKey;
 
     private float movePercentage;
 
@@ -16,8 +17,21 @@ public class Door : MonoBehaviour
             //Player can open
             if (Input.GetButton("Fire2"))
             {
-                isOpen = true;
-                isMoving = true;
+                if (needsKey)
+                {
+                    PlayerBase pb = other.gameObject.GetComponent<PlayerBase>();
+                    if (pb.keys > 0)
+                    {
+                        pb.RemoveKey();
+                        isOpen = true;
+                        isMoving = true;
+                    }
+                }
+                else
+                {
+                    isOpen = true;
+                    isMoving = true;
+                }
             }
         }
     }
