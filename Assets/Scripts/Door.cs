@@ -5,32 +5,32 @@ using Controller;
 
 public class Door : MonoBehaviour
 {
-    private bool isOpen;
+    private bool _isOpen;
     private bool isMoving;
     public bool needsKey;
 
     private float movePercentage;
 
-    void OnTriggerStay(Collider other)
+    private void OnTriggerStay(Collider other)
     {
-        if (other.gameObject.tag == "Player")
+        if (other.gameObject.CompareTag("Player"))
         {
             //Player can open
-            if (Input.GetButton("Fire2"))
+            if (Input.GetButton("Fire2") && !_isOpen)
             {
                 if (needsKey)
                 {
-                    PlayerBase pb = other.gameObject.GetComponent<PlayerBase>();
+                    var pb = other.gameObject.GetComponent<PlayerBase>();
                     if (pb.Keys > 0)
                     {
                         pb.RemoveKey();
-                        isOpen = true;
+                        _isOpen = true;
                         isMoving = true;
                     }
                 }
                 else
                 {
-                    isOpen = true;
+                    _isOpen = true;
                     isMoving = true;
                 }
             }
@@ -41,7 +41,8 @@ public class Door : MonoBehaviour
     {
         if (isMoving)
         {
-            transform.position = Vector3.Lerp(new Vector3(transform.position.x, 1.0f, transform.position.z), new Vector3(transform.position.x, 3.0f, transform.position.z), movePercentage);
+            var pos = transform.position;
+            transform.position = Vector3.Lerp(new Vector3(pos.x, 1.0f, pos.z), new Vector3(pos.x, 3.0f, pos.z), movePercentage);
             movePercentage += Time.deltaTime;
             if (movePercentage > 1.0)
                 isMoving = false;
