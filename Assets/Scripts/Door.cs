@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Controller;
 
 public class Door : MonoBehaviour
 {
@@ -20,7 +21,7 @@ public class Door : MonoBehaviour
                 if (needsKey)
                 {
                     PlayerBase pb = other.gameObject.GetComponent<PlayerBase>();
-                    if (pb.keys > 0)
+                    if (pb.Keys > 0)
                     {
                         pb.RemoveKey();
                         isOpen = true;
