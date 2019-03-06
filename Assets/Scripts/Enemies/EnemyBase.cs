@@ -34,8 +34,9 @@ namespace Enemies
         {
             if (other.gameObject.CompareTag("Player"))
             {
-                print(_delta);
+                //print(_delta);
                 _delta += Time.fixedDeltaTime;
+
 
                 if (_delta >= 0.5f)
                 {
